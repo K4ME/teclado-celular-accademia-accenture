@@ -1,9 +1,10 @@
 import React from 'react';
 
+import Teclado from './components/Teclado/index';
 
 function App() {
   return (    
-      <h1>Teclado Nokia</h1>    
+      <Teclado />   
   );
 }
 
