@@ -24,8 +24,13 @@ function Teclado() {
         <div className='text-area-container'>
           <textarea>{string}</textarea>
         </div>
+
+        <div className='button-container'>
+          <button className='sup-number' onClick={() => SendCode()}>✆</button>
+        </div>
+
         <div className='grupo1-container'>
-          <button /* onClick={() => setNums(nums.concat('1'))} */>1</button>
+          <button className="sup-number"><sup>1</sup></button>
           <button onClick={() => setNums(`${nums}${2}`)}>
           <sup className="sup-number">2</sup> abc
           </button>
@@ -46,13 +51,13 @@ function Teclado() {
         </div>
         <div className='grupo3-container'>
           <button onClick={() => setNums(`${nums}${7}`)}>
-            <sup className="sup-numeros">7</sup> pqrs
+            <sup className="sup-number">7</sup> pqrs
           </button>
           <button onClick={() => setNums(`${nums}${8}`)}>
-              <sup className="sup-numeros">8</sup> tuv
+              <sup className="sup-number">8</sup> tuv
           </button>
           <button onClick={() => setNums(`${nums}${9}`)}>
-            wxyz <sup className="sup-numeros">9</sup>
+            wxyz <sup className="sup-number">9</sup>
           </button>
         </div>
       </div>    
