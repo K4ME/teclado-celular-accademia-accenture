@@ -1,7 +1,8 @@
 .container button {
   width: 60px;
+  height: 30px;
 }
 
-.sup-numeros {
+.sup-number {
   font-weight: bold;
 }
