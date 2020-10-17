@@ -5,18 +5,22 @@ import "./index.css";
 
 function Teclado() {
   const [nums, setNums] = useState('');
-  const [string, setString] = useState('');
+  const [string, setString] = useState('dsdfdsds');
 
   useEffect (() => {
     console.log(nums);
   }, [nums])
 
   async function SendCode(){
-    const sendObject = {
-      "message": nums
-    }
-    const response = await api.post("/", sendObject);
-    setString(`${string}${response.data}`);
+    const response = await api.post(`/api/teclado/${nums}`);
+    setString(`${string}${response.data.message}`);
+    setNums('');
+  }
+
+  function Delete(){
+    let newString = string.slice(0, string.length - 1)
+    setString(newString);    
+    console.log(newString);
   }
 
   return (    
@@ -59,6 +63,17 @@ function Teclado() {
           <button onClick={() => setNums(`${nums}${9}`)}>
             wxyz <sup className="sup-number">9</sup>
           </button>
+        </div>
+
+        <div className='grupo4-container'>     
+          
+          <button onClick={() => setString(`${string} `)}>  
+            Espaço            
+          </button>
+          <button onClick={() => Delete()}>  
+            Apagar            
+          </button>
+          
         </div>
       </div>    
   );
